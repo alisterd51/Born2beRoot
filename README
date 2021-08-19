@@ -1,0 +1,87 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    README                                             :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: anclarma <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/08/18 16:55:30 by anclarma          #+#    #+#              #
+#    Updated: 2021/08/19 16:50:32 by anclarma         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+id:root
+mdp:Legropmdp123
+
+id:anclarma
+mdp:Monsupermdp123
+
+disk:
+pass_phrase:Ceci est ma super phrase secrete!!!
+
+ssh:
+apt install -y ssh
+/etc/ssh/ssh_config
+systemctl enable --now ssh.service
+/etc/ssh/sshd_config
+
+sudo:
+apt install -y sudo
+/etc/sudoers
+
+ufw:
+apt install -y ufw
+ufw status verbose
+ufw allow 4242
+ufw deny 4242
+ufw delete deny 4242
+
+groupes:
+groups
+id
+adduser anclarma sudo
+	groupadd user42
+	ou
+	addgroup user42
+
+	adduser anclarma user42
+	ou
+	usermod -aG user42 anclarma
+
+debian vs centos:
+debian->ubuntu->...
+	populaire est simple
+	beaucoup de disto sont des derivee de debian
+	destinee au postes de tarvail et au serveurs
+	install et config simplifier par rapport a centos
+fedora->RHEL->centos
+	securise est stable
+	compatible avec RHEL (et un peu avec fedora) et gratuit
+	destinee au serveurs
+	beaucoup + acces securite que debian
+
+aptitude vs apt:
+	aptitude supprimera automatiquement les paquets éligibles, tandis qu'apt-get requiert une commande séparée pour le faire
+	aptitude fournit une interface de menu terminal (un peu comme Synaptic dans un terminal), alors que ce apt-get n’est pas le cas.
+
+apparmor:
+	logiciel de securite pour linux
+	(se base sur le chemain)
+selinux:
+	meme chose pour centos mais plus difficile a config
+	(se base sur le nom)
+
+hostname:
+	hostnamectl set-hostname anclarma42
+	vi /etc/hosts
+	hostnamectl
+
+mot de passe strict:
+	apt install -y libpam-cracklib
+	vi /etc/pam.d/common-password
+	vi /etc/login.defs
+	man pam_cracklib
+
+sudo strict:
+
+
