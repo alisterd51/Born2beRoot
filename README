@@ -6,7 +6,7 @@
 #    By: anclarma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/18 16:55:30 by anclarma          #+#    #+#              #
-#    Updated: 2021/08/19 16:50:32 by anclarma         ###   ########.fr        #
+#    Updated: 2021/08/20 14:25:16 by anclarma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,11 +77,14 @@ hostname:
 	hostnamectl
 
 mot de passe strict:
-	apt install -y libpam-cracklib
+	apt install -y libpam-pwquality
+	vi /etc/security/pwquality.conf
 	vi /etc/pam.d/common-password
 	vi /etc/login.defs
 	man pam_cracklib
 
 sudo strict:
 
-
+netstat:
+	apt install -y net-tools
+	netstat -a
